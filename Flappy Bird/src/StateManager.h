@@ -9,6 +9,8 @@ public:
 	void addState(GameState* state);
 	void deleteState();
 
+	const GameState* returnState();
+
 	void update();
 	void render(sf::RenderTarget& target);
 

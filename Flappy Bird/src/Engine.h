@@ -18,7 +18,8 @@ private:
 	sf::RenderWindow mWindow;
 	sf::Image icon;
 	bool gameOver;
-	
+	bool introStateOn;
+
 	sf::Font mFont;
 	sf::Text mText;
 

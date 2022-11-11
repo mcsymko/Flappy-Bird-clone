@@ -11,6 +11,11 @@ void StateManager::deleteState()
 	states.pop();
 }
 
+const GameState* StateManager::returnState()
+{
+	return states.top();
+}
+
 void StateManager::update()
 {
 	states.top()->update();

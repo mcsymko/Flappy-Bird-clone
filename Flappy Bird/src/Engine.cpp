@@ -1,9 +1,10 @@
 #include "Engine.h"
 #include "pch.h"
 #include "IntroState.h"
+#include "PlayingState.h"
 
 Engine::Engine()
-	:gameOver(false)
+	:gameOver(false), introStateOn(true)
 {
 	mWindow.create(sf::VideoMode(600, 800), "Flappy Bird", sf::Style::Close);
 	mWindow.setFramerateLimit(120);
@@ -24,11 +25,12 @@ void Engine::pollEvents()
 			gameOver = true;
 		else if (sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Escape)
 			gameOver = true;
-		else if (sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Space)
+		else if (introStateOn && sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Space)
 		{
-			
+			gameStates.deleteState();
+			introStateOn = false;
+			gameStates.addState(new PlayingState);
 		}
-
 	}
 }
 
