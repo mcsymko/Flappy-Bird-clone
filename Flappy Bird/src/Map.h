@@ -4,8 +4,8 @@ class Map
 {
 public:
 	Map();
-
-	const sf::Vector2f& getMapBounds();
+	
+	void move();
 
 	void update();
 	void render(sf::RenderTarget& target);
@@ -15,5 +15,7 @@ private:
 	sf::Texture baseTexture;
 	sf::Sprite mBackground;
 	sf::Sprite mBase;
+
+	const float movingSpeed;
 };
 

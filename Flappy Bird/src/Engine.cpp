@@ -8,6 +8,9 @@ Engine::Engine()
 	mWindow.create(sf::VideoMode(600, 800), "Flappy Bird", sf::Style::Close);
 	mWindow.setFramerateLimit(120);
 
+	icon.loadFromFile("Textures/icon.png");
+	mWindow.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+
 	gameStates.addState(new IntroState);
 }
 

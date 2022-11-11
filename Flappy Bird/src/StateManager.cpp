@@ -6,6 +6,11 @@ void StateManager::addState(GameState* state)
 	states.push(state);
 }
 
+void StateManager::deleteState()
+{
+	states.pop();
+}
+
 void StateManager::update()
 {
 	states.top()->update();

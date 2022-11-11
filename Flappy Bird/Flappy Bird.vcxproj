@@ -151,6 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\PlayingState.cpp" />
+    <ClCompile Include="src\Pipes.cpp" />
     <ClCompile Include="src\Map.cpp" />
     <ClCompile Include="src\IntroState.cpp" />
     <ClCompile Include="src\GameState.cpp" />
@@ -163,6 +165,8 @@
     <ClCompile Include="src\StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\PlayingState.h" />
+    <ClInclude Include="src\Pipes.h" />
     <ClInclude Include="src\Map.h" />
     <ClInclude Include="src\IntroState.h" />
     <ClInclude Include="src\GameState.h" />

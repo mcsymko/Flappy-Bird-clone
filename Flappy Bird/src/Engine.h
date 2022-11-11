@@ -16,6 +16,7 @@ public:
 
 private:
 	sf::RenderWindow mWindow;
+	sf::Image icon;
 	bool gameOver;
 	
 	sf::Font mFont;
