@@ -6,6 +6,8 @@ public:
 	Pipes();
 
 	void init();
+	void calculateRandomPosition();
+	void checkRespawn();
 	void move();
 
 	void update();
@@ -16,5 +18,9 @@ private:
 	sf::Sprite pipeUp[2], pipeDown[2];
 
 	const float movingSpeed;
+	const float horizontalDistanceBetweenPipes;
+	const float verticalDistanceBetweenPipes;
+
+	int randomPosition;
 };
 

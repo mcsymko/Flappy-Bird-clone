@@ -19,18 +19,19 @@ void PlayingState::checkPressedSpace()
 
 void PlayingState::update()
 {
-	map.update();
+	base.update();
 
 	checkPressedSpace();
 	if (gameOn)
 	{
 		initGameplay();
-		std::cout << "PRESSED\n";
 	}
+
 }
 
 void PlayingState::render(sf::RenderTarget& target)
 {
 	map.render(target);
 	pipes.render(target);
+	base.render(target);
 }
