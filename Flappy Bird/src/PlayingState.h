@@ -10,11 +10,17 @@ class PlayingState :
 public:
     PlayingState();
 
+    void initGameplay();
+
+   void checkPressedSpace();
+
     void update();
     void render(sf::RenderTarget& target);
     
 private:
     Map map;
     Pipes pipes;
+        
+    bool gameOn;
 };
 

@@ -154,7 +154,6 @@
     <ClCompile Include="src\PlayingState.cpp" />
     <ClCompile Include="src\Pipes.cpp" />
     <ClCompile Include="src\Map.cpp" />
-    <ClCompile Include="src\IntroState.cpp" />
     <ClCompile Include="src\GameState.cpp" />
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\Main.cpp" />
@@ -168,7 +167,6 @@
     <ClInclude Include="src\PlayingState.h" />
     <ClInclude Include="src\Pipes.h" />
     <ClInclude Include="src\Map.h" />
-    <ClInclude Include="src\IntroState.h" />
     <ClInclude Include="src\GameState.h" />
     <ClInclude Include="src\Engine.h" />
     <ClInclude Include="src\pch.h" />

@@ -12,7 +12,7 @@ Map::Map()
 	mBackground.setScale(2.1f, 1.7f);
 	mBase.setScale(2.f, 1.f);
 
-	mBase.setPosition(sf::Vector2f(0.f, 700.f));
+	/*mBase.setPosition(sf::Vector2f(0.f, 700.f));*/
 }
 
 void Map::move()
@@ -23,6 +23,16 @@ void Map::move()
 
 	mBase.setPosition(sf::Vector2f(mBase.getPosition().x - movingSpeed, 700.f));
 }
+
+//const sf::Vector2f& Map::getBasePosition()
+//{
+//	return mBase.getPosition();
+//}
+//
+//void Map::setBasePosition(sf::Vector2f position)
+//{
+//	mBase.setPosition(position);
+//}
 
 void Map::update()
 {

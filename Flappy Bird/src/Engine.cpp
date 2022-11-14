@@ -1,10 +1,9 @@
-#include "Engine.h"
 #include "pch.h"
-#include "IntroState.h"
+#include "Engine.h"
 #include "PlayingState.h"
 
 Engine::Engine()
-	:gameOver(false), introStateOn(true)
+	:gameOver(false)
 {
 	mWindow.create(sf::VideoMode(600, 800), "Flappy Bird", sf::Style::Close);
 	mWindow.setFramerateLimit(120);
@@ -12,7 +11,7 @@ Engine::Engine()
 	icon.loadFromFile("Textures/icon.png");
 	mWindow.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
 
-	gameStates.addState(new IntroState);
+	gameStates.addState(new PlayingState);
 }
 
 void Engine::pollEvents()
@@ -25,12 +24,6 @@ void Engine::pollEvents()
 			gameOver = true;
 		else if (sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Escape)
 			gameOver = true;
-		else if (introStateOn && sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Space)
-		{
-			gameStates.deleteState();
-			introStateOn = false;
-			gameStates.addState(new PlayingState);
-		}
 	}
 }
 

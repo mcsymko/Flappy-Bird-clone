@@ -1,4 +1,5 @@
 #pragma once
+
 #include "pch.h"
 #include "StateManager.h"
 
@@ -18,7 +19,6 @@ private:
 	sf::RenderWindow mWindow;
 	sf::Image icon;
 	bool gameOver;
-	bool introStateOn;
 
 	sf::Font mFont;
 	sf::Text mText;
