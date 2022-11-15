@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Animation.cpp" />
     <ClCompile Include="src\Bird.cpp" />
     <ClCompile Include="src\Base.cpp" />
     <ClCompile Include="src\PlayingState.cpp" />
@@ -166,6 +167,7 @@
     <ClCompile Include="src\StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Animation.h" />
     <ClInclude Include="src\Bird.h" />
     <ClInclude Include="src\Base.h" />
     <ClInclude Include="src\PlayingState.h" />

@@ -33,7 +33,7 @@ void PlayingState::update()
 void PlayingState::render(sf::RenderTarget& target)
 {
 	map.render(target);
-	/*pipes.render(target);*/
+	pipes.render(target);
 	base.render(target);
 	bird.render(target);
 }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Animation.h"
+
 enum class Directions
 {
 	UP, DOWN
@@ -18,8 +20,7 @@ public:
 	void render(sf::RenderTarget& target);
 
 private:
-	sf::Texture tBird1, tBird2, tBird3;
-	sf::Sprite bird;
+	Animation birdAnimation;
 
 	float movingSpeed;
 
