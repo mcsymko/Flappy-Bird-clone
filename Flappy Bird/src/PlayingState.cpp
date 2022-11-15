@@ -9,6 +9,7 @@ PlayingState::PlayingState()
 void PlayingState::initGameplay()
 {
 	pipes.update();
+	bird.update();
 }
 
 void PlayingState::checkPressedSpace()
@@ -20,18 +21,19 @@ void PlayingState::checkPressedSpace()
 void PlayingState::update()
 {
 	base.update();
+	
+	bird.introStateMove();
 
 	checkPressedSpace();
-	if (gameOn)
-	{
-		initGameplay();
-	}
 
+	if (gameOn)
+		initGameplay();
 }
 
 void PlayingState::render(sf::RenderTarget& target)
 {
 	map.render(target);
-	pipes.render(target);
+	/*pipes.render(target);*/
 	base.render(target);
+	bird.render(target);
 }

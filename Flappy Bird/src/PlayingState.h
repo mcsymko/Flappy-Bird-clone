@@ -4,6 +4,7 @@
 #include "Map.h"
 #include "Base.h"
 #include "Pipes.h"
+#include "Bird.h"
 
 class PlayingState :
     public GameState
@@ -22,7 +23,7 @@ private:
     Map map;
     Base base;
     Pipes pipes;
+    Bird bird;
         
     bool gameOn;
 };
-
