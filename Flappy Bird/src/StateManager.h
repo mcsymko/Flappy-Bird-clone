@@ -11,7 +11,6 @@ public:
 
 	const GameState* returnState();
 
-	void moveBird();
 	void update();
 	void render(sf::RenderTarget& target);
 

@@ -2,7 +2,7 @@
 #include "Animation.h"
 
 Animation::Animation()
-	:numberOfTexture(0), upwardsRotation(-5.f), distanceY(0.f)
+	:numberOfTexture(0)
 {
 	birdTextures[0].loadFromFile("Textures/flappy1.png");
 	birdTextures[1].loadFromFile("Textures/flappy2.png");
@@ -24,43 +24,12 @@ const sf::Vector2f& Animation::getBirdPosition()
 	return bird.getPosition();
 }
 
-void Animation::birdUpwardsRotation()
-{
-	while (upwardsRotation > -20.f)
-	{
-		if (timer.getElapsedTime().asSeconds() > 0.03f)
-		{
-			bird.setRotation(upwardsRotation);
-			timer.restart();
-
-			upwardsRotation -= 5.f;
-		}
-	}
-}
-
-void Animation::introBirdAnimation(float x, float y)
-{
-	bird.move(x, y);
-}
-
 void Animation::birdMove(float X, float Y)
 {
-	birdUpwardsRotation(); 
-
-	while (distanceY > Y)
-	{
-		if (timer.getElapsedTime().asSeconds() > 0.005f)
-		{
-			bird.move(X, distanceY);
-			timer.restart();
-
-			distanceY -= 5.f;
-		}
-	}
-	distanceY = 0.f;
+	bird.move(X, Y);
 }
 
-void Animation::animateWings()
+void Animation::animateIntro()
 {
 	if (timer.getElapsedTime().asSeconds() > 0.1f)
 	{
@@ -75,7 +44,7 @@ void Animation::animateWings()
 
 void Animation::update()
 {
-	animateWings();
+	animateIntro();
 }
 
 void Animation::render(sf::RenderTarget& target)
