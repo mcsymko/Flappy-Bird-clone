@@ -16,6 +16,8 @@ public:
 
     void checkPressedSpace();
 
+    void moveBird();
+
     void update();
     void render(sf::RenderTarget& target);
     
@@ -26,4 +28,8 @@ private:
     Bird bird;
         
     bool gameOn;
+
+    sf::Font font;
+    sf::Text currentScore;
+    int cScore;
 };

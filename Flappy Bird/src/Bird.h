@@ -2,7 +2,7 @@
 
 #include "Animation.h"
 
-enum class Directions
+enum class IntroStateDirections
 {
 	UP, DOWN
 };
@@ -12,20 +12,23 @@ class Bird
 public:
 	Bird();
 
+	void birdFalling();
 	void manageDirections();
 	void introStateMove();
 	void move();
 
-	void update();
+	void animateWings();
+
 	void render(sf::RenderTarget& target);
 
 private:
 	Animation birdAnimation;
 
-	float movingSpeed;
+	float staticMovingSpeed;
+	float dynamicMovingSpeed;
 
 	bool gameON;
 	
-	Directions dir;
+	IntroStateDirections introDir;
 };
 
