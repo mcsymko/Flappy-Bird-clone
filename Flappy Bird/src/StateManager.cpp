@@ -16,6 +16,11 @@ const GameState* StateManager::returnState()
 	return states.top();
 }
 
+void StateManager::moveBird()
+{
+	states.top()->moveBird();
+}
+
 void StateManager::update()
 {
 	states.top()->update();

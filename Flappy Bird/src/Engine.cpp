@@ -7,6 +7,7 @@ Engine::Engine()
 {
 	mWindow.create(sf::VideoMode(600, 800), "Flappy Bird", sf::Style::Close);
 	mWindow.setFramerateLimit(120);
+	mWindow.setKeyRepeatEnabled(false);
 
 	icon.loadFromFile("Textures/icon.png");
 	mWindow.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
@@ -22,8 +23,12 @@ void Engine::pollEvents()
 	{
 		if (ev.type == sf::Event::Closed)
 			gameOver = true;
-		else if (sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Escape)
+		else if (ev.type == sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Escape)
 			gameOver = true;
+		else if (ev.type == sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Space)
+		{
+			gameStates.moveBird();
+		}
 	}
 }
 

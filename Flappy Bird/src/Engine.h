@@ -9,12 +9,13 @@ public:
 	Engine();
 
 	void pollEvents();
+
 	void update();
 
 	void render();
 
 	void run();
-
+	
 private:
 	sf::RenderWindow mWindow;
 	sf::Image icon;

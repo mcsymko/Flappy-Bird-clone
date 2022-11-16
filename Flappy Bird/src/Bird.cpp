@@ -2,45 +2,49 @@
 #include "Bird.h"
 
 Bird::Bird()
-	:movingSpeed(0.45f), gameON(false)
+	:staticMovingSpeed(0.45f), dynamicMovingSpeed(-20.f), gameON(false)
 {
-	dir = Directions::UP;
+	introDir = IntroStateDirections::UP;
+}
+
+void Bird::birdFalling()
+{
+	
 }
 
 void Bird::manageDirections()
 {
-	switch (dir)
+	switch (introDir)
 	{
-	case Directions::UP:
-		birdAnimation.birdMove(0.f, -movingSpeed);
+	case IntroStateDirections::UP:
+		birdAnimation.introBirdAnimation(0.f, -staticMovingSpeed);
 		break;
-	case Directions::DOWN:
-		birdAnimation.birdMove(0.f, movingSpeed);
+	case IntroStateDirections::DOWN:
+		birdAnimation.introBirdAnimation(0.f, staticMovingSpeed);
 		break;
 	}
 }
 
 void Bird::introStateMove()
 {
-	birdAnimation.update();
-
 	manageDirections();
 
 	if (birdAnimation.getBirdPosition().y < 390.f)
-		dir = Directions::DOWN;
+		introDir = IntroStateDirections::DOWN;
 
 	if (birdAnimation.getBirdPosition().y > 410.f)
-		dir = Directions::UP;
+		introDir = IntroStateDirections::UP;
 }
 
 void Bird::move()
 {
+	birdAnimation.birdMove(0.f , dynamicMovingSpeed);
 	
 }
 
-void Bird::update()
+void Bird::animateWings()
 {
-	move();
+	birdAnimation.animateWings();
 }
 
 void Bird::render(sf::RenderTarget& target)

@@ -7,8 +7,10 @@ public:
 
 	const sf::Vector2f& getBirdPosition();
 
+	void birdUpwardsRotation();
+	void introBirdAnimation(float x, float y);
 	void birdMove(float X, float Y);
-	void animateIntro();
+	void animateWings();
 	
 	void update();
 	void render(sf::RenderTarget& target);
@@ -19,5 +21,9 @@ private:
 
 	sf::Clock timer;
 	int numberOfTexture;
+
+	float upwardsRotation;
+
+	float distanceY;
 };
 
