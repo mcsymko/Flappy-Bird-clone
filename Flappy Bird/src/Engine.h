@@ -21,6 +21,8 @@ private:
 	sf::Image icon;
 	bool gameOver;
 
+	bool gameStateOn;
+
 	sf::Font mFont;
 	sf::Text mText;
 

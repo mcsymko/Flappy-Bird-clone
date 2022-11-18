@@ -9,7 +9,7 @@ Bird::Bird()
 
 void Bird::birdFalling()
 {
-	
+	birdAnimation.birdFalling();
 }
 
 void Bird::manageDirections()
@@ -27,6 +27,7 @@ void Bird::manageDirections()
 
 void Bird::introStateMove()
 {
+	animateWings();
 	manageDirections();
 
 	if (birdAnimation.getBirdPosition().y < 390.f)
@@ -39,12 +40,17 @@ void Bird::introStateMove()
 void Bird::move()
 {
 	birdAnimation.birdMove(0.f , dynamicMovingSpeed);
-	
 }
 
 void Bird::animateWings()
 {
 	birdAnimation.animateWings();
+}
+
+void Bird::update()
+{
+	birdFalling();
+	birdAnimation.update();
 }
 
 void Bird::render(sf::RenderTarget& target)

@@ -16,6 +16,11 @@ const GameState* StateManager::returnState()
 	return states.top();
 }
 
+void StateManager::isGameOn(bool X)
+{
+	states.top()->isGameOn(X);
+}
+
 void StateManager::moveBird()
 {
 	states.top()->moveBird();

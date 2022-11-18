@@ -11,18 +11,15 @@ PlayingState::PlayingState()
 	currentScore.setString("0");
 }
 
+void PlayingState::isGameOn(bool X)
+{
+	gameOn = X;
+}
+
 void PlayingState::initGameplay()
 {
 	pipes.update();
-	bird.birdFalling();
-}
-
-void PlayingState::checkPressedSpace()
-{
-	if (!gameOn && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
-	{
-		gameOn = true;
-	}
+	bird.update();
 }
 
 void PlayingState::moveBird()
@@ -33,13 +30,12 @@ void PlayingState::moveBird()
 void PlayingState::update()
 {
 	base.update();
-	bird.animateWings();
 
 	if (gameOn)
 		initGameplay();
-	else 
+
+	else if(!gameOn)
 	{
-		checkPressedSpace();
 		bird.introStateMove();
 	}
 }

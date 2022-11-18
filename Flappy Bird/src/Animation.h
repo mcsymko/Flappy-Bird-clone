@@ -7,9 +7,10 @@ public:
 
 	const sf::Vector2f& getBirdPosition();
 
-	void birdUpwardsRotation();
 	void introBirdAnimation(float x, float y);
 	void birdMove(float X, float Y);
+	void birdFalling();
+
 	void animateWings();
 	
 	void update();
@@ -23,7 +24,10 @@ private:
 	int numberOfTexture;
 
 	float upwardsRotation;
+	float downwardsRotation;
 
-	float distanceY;
+	float birdJumpingSpeed;
+
+	float birdFallingSpeed;
 };
 

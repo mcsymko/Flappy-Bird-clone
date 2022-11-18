@@ -3,7 +3,7 @@
 #include "PlayingState.h"
 
 Engine::Engine()
-	:gameOver(false)
+	:gameOver(false), gameStateOn(false)
 {
 	mWindow.create(sf::VideoMode(600, 800), "Flappy Bird", sf::Style::Close);
 	mWindow.setFramerateLimit(120);
@@ -27,6 +27,12 @@ void Engine::pollEvents()
 			gameOver = true;
 		else if (ev.type == sf::Event::KeyPressed && ev.key.code == sf::Keyboard::Space)
 		{
+			if (!gameStateOn)
+			{
+				gameStateOn = true;
+				gameStates.isGameOn(gameStateOn);
+			}
+
 			gameStates.moveBird();
 		}
 	}

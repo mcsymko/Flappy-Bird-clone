@@ -19,6 +19,7 @@ public:
 
 	void animateWings();
 
+	void update();
 	void render(sf::RenderTarget& target);
 
 private:

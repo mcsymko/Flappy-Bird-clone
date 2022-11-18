@@ -12,9 +12,9 @@ class PlayingState :
 public:
     PlayingState();
 
-    void initGameplay();
+    void isGameOn(bool X);
 
-    void checkPressedSpace();
+    void initGameplay();
 
     void moveBird();
 
