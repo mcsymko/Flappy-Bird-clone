@@ -36,39 +36,32 @@ void Animation::birdMove(float X, float Y)
 
 void Animation::birdFalling()
 {
-	if (timer.getElapsedTime().asSeconds() > 0.006f)
+	if (timerOne.getElapsedTime().asSeconds() > 0.006f)
 	{
 		if (birdFallingSpeed > 4.f)
 			birdFallingSpeed = 4.f;
 
 		if (downwardsRotation > 90.f)
 		{
+			bird.setTexture(birdTextures[1]);
 			downwardsRotation = 90.f;
 		}
 		else if (downwardsRotation <= 0.f)
 		{
-			if (timer.getElapsedTime().asSeconds() > 0.1f)
-			{
-				if (++numberOfTexture > 2)
-				{
-					numberOfTexture = 0;
-				}
-				bird.setTexture(birdTextures[numberOfTexture]);
-			}
-				timer.restart();
 			downwardsRotation += 0.5f;
 		}
 		else
 		{
+			bird.setTexture(birdTextures[1]);
 			downwardsRotation += 2.f;
 		}
 
 		birdFallingSpeed += 0.14f;
 
 		bird.move(0.f, birdFallingSpeed);
-	/*	bird.setRotation(downwardsRotation);*/
+		bird.setRotation(downwardsRotation);
 
-		timer.restart();
+		timerOne.restart();
 	}
 
 	/*bird.move(0.f, 3.7f);*/
@@ -76,20 +69,22 @@ void Animation::birdFalling()
 
 void Animation::animateWings()
 {
-	if (timer.getElapsedTime().asSeconds() > 0.1f)
+	
+	if (timerTwo.getElapsedTime().asSeconds() > 0.1f)
 	{
 		if (++numberOfTexture > 2)
 		{
 			numberOfTexture = 0;
 		}
 		bird.setTexture(birdTextures[numberOfTexture]);
-		timer.restart();
+	
+		timerTwo.restart();
 	}
 }
 
 void Animation::update()
 {
-
+	animateWings();
 }
 
 void Animation::render(sf::RenderTarget& target)

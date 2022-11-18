@@ -20,7 +20,7 @@ private:
 	sf::Texture birdTextures[3];
 	sf::Sprite bird;
 
-	sf::Clock timer;
+	sf::Clock timerOne, timerTwo;
 	int numberOfTexture;
 
 	float upwardsRotation;
